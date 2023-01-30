@@ -1,4 +1,4 @@
-date >> output.log
+date > output.log
 lscpu >> output.log
 python3 data_gen.py ${1}
 python3 speedtest_aes.py ${2}
