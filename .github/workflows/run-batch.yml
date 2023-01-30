@@ -1,4 +1,4 @@
-name: speed-test
+name: speed-test-windows
 
 on:
   workflow_dispatch:
