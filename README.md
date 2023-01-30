@@ -3,7 +3,7 @@ Python Codebase to test the speed of Block and Stream Ciphers on your PC
 
 ## Info
 
-This testkit runs on [`PyCryptoDome`](https://www.pycryptodome.org/). The following ciphers will be tested with the following key sizes:
+This testkit runs on [`pycryptodome`](https://www.pycryptodome.org/). The following ciphers will be tested with the following key sizes:
 
 | Cipher   | Type   | Key Size (bits)             |
 | -------- | ------ | --------------------------- |
@@ -33,6 +33,19 @@ This repository contains the following files:
 
 The outputs generated are available in a file named `output.log`
 
+### Installing dependencies
+
+Running this requires [`python3`](https://python.org), you can install it using the following command:
+```
+  $ sudo apt install python3
+```
+You need to install `pycryptodome` for this to run. You can do this using the following steps:
+```
+  $ pip3 install -r requirements.txt
+```
+You can also install `pycryptodome` manually using `pip3 install pycryptodome`
+
+
 ### Generating the test data
 
 To generate the random data, run the `data_gen.py` script as shown below:
@@ -45,6 +58,7 @@ For example, the following command generates `16MB` of data:
 ```
 Failure to provide the `FILE_SIZE_IN_MEGABYTES` argument will default to producing `64MB` of data
 
+
 ### Testing a cipher
 
 To test a cipher `X`, run the `speedtest_x.py` script as shown below:
@@ -56,6 +70,7 @@ For example, the following command tests the `ChaCha20` Cipher for `10` trials:
   $ python3 speedtest_chacha20.py 10
 ```
 Failure to provide the `TRIALS` argument will default to testing for `15` trials
+
 
 ### Running all tests
 
