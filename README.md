@@ -70,3 +70,5 @@ For example, the following command tests all ciphers for `16MB` random data for 
 Failure to provide the `FILE_SIZE_IN_MEGABYTES` or `TRIALS` argument will default to `64MB` and `15` trials.
 
 `run_all.sh` also logs the Date and Time of execution along with information about your CPU architecture.
+
+**WARNING:** `run_all.sh` cleans your log file! Previous logs will be overwritten!
