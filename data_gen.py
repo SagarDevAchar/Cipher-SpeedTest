@@ -1,8 +1,14 @@
+from tee import *
 from random import randbytes
 import sys
 
-print("\nRunning " + sys.argv[0])
-print("=" * 75)
+tee_print("\nRunning " + sys.argv[0])
+tee_print("=" * 50)
 
-with open('64MB.bin', 'wb') as f:
-    f.write(randbytes(64 * 1024 ** 2))
+with open('random_data.bin', 'wb') as f:
+    try:
+        f.write(randbytes(int(sys.argv[1]) * 1024 ** 2))
+        tee_print(f"Generated {str(sys.argv[1])}MB into 'random_data.bin'")
+    except Exception:
+        tee_print(f"Invalid Argument Received\nDefaulting to 64MB")
+        f.write(randbytes(64 * 1024 ** 2))
