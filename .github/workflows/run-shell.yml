@@ -1,4 +1,4 @@
-name: speed-test
+name: speed-test-ubuntu
 
 on:
   workflow_dispatch:
