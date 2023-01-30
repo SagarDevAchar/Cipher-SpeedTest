@@ -16,7 +16,7 @@ This testkit runs on [`pycryptodome`](https://www.pycryptodome.org/). The follow
 | Salsa20  | Stream | 128 / 256                   |
 | RC4      | Stream | 40 / 128 / 192 / 256 / 2048 | 
 
-All Ciphers are tested for **encryption** and **decryption** of a `64 MB` (megabytes) file containing random data. The average of 15 iterations is produced.
+All Ciphers are tested for **encryption** and **decryption** of a `64 MB` (megabytes) file containing random data. The average of `15` iterations is produced.
 
 This process will take time, so please be patient!
 
