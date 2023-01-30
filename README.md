@@ -28,18 +28,30 @@ This repository contains the following files:
 - `requirements.txt`: Contains the Python Dependencies
 - `data_gen.py`: Generators a `.bin` file in the working directory of 64MB Size
 - `tee.py`: A very primitive version of the Linux [`tee`](https://en.wikipedia.org/wiki/Tee_(command)) to log and print parallelly
-- `speedtest_X.py`: Speedtest Code for Cipher `X`
+- `speedtest_x.py`: Speedtest Code for Cipher `X`
 
 The outputs generated are available in a file named `output.log`
 
-For Windows users
+### Generating the test data
 
+To generate the random data, run the `data_gen.py` script as shown below:
 ```
-  > run_windows.bat
+  $ python data_gen.py [FILE_SIZE_IN_MEGABYTES]
 ```
+For example, the following command generates `16MB` of data:
+```
+  $ python data_gen.py 16
+```
+Failure to provide the `FILE_SIZE_IN_MEGABYTES` argument will default to producing `64MB` of data
 
-For Linux users
+### Testing a cipher
 
+To test a cipher `X`, run the `speedtest_x.py` script as shown below:
 ```
-  $ sh run_linux.sh
+  $ python speedtest_x.py [TRIALS]
 ```
+For example, the following command tests the `ChaCha20` Cipher for `10` rounds:
+```
+  $ python speedtest_chacha20.py 10
+```
+Failure to provide the `TRIALS` argument will default to testing for `15` trials
