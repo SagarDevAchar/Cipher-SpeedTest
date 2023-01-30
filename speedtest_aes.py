@@ -5,7 +5,7 @@ from random import randbytes
 import sys
 
 tee_print("\nRunning " + sys.argv[0])
-tee_print("=" * 50)
+tee_print("-" * 64)
 
 with open('random_data.bin', 'rb') as f:
     buffer = f.read()
@@ -16,14 +16,14 @@ try:
     tee_print(f"Setting TRIALS = {sys.argv[1]}")
 except Exception:
     TRIALS = 15
-    tee_print(f"Invalid Argument Received\nDefaulting to TRIALS = 15")
+    tee_print(f"Invalid TRIALS Argument\nDefaulting to TRIALS = 15")
 
 
 tee_print("\nENCRYPT")
 
 start = dt.now()
 for _ in range(TRIALS):
-    tee_print(f"\rAES-ECB-128: {_}", end='')
+    tee_print(f"\rAES-ECB-128:\t#{_+1}", end='')
     aes = AES.new(randbytes(16), AES.MODE_ECB)
     aes.encrypt(buffer)
 end = dt.now()
@@ -32,7 +32,7 @@ tee_print(f"\rAES-ECB-128:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / 
 
 start = dt.now()
 for _ in range(TRIALS):
-    tee_print(f"\rAES-ECB-192: {_}", end='')
+    tee_print(f"\rAES-ECB-192:\t#{_+1}", end='')
     aes = AES.new(randbytes(24), AES.MODE_ECB)
     aes.encrypt(buffer)
 end = dt.now()
@@ -41,7 +41,7 @@ tee_print(f"\rAES-ECB-192:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / 
 
 start = dt.now()
 for _ in range(TRIALS):
-    tee_print(f"\rAES-ECB-256: {_}", end='')
+    tee_print(f"\rAES-ECB-256:\t#{_+1}", end='')
     aes = AES.new(randbytes(32), AES.MODE_ECB)
     aes.encrypt(buffer)
 end = dt.now()
@@ -52,7 +52,7 @@ tee_print("\nDECRYPT")
 
 start = dt.now()
 for _ in range(TRIALS):
-    tee_print(f"\rAES-ECB-128: {_}", end='')
+    tee_print(f"\rAES-ECB-128:\t#{_+1}", end='')
     aes = AES.new(randbytes(16), AES.MODE_ECB)
     aes.decrypt(buffer)
 end = dt.now()
@@ -61,7 +61,7 @@ tee_print(f"\rAES-ECB-128:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / 
 
 start = dt.now()
 for _ in range(TRIALS):
-    tee_print(f"\rAES-ECB-192: {_}", end='')
+    tee_print(f"\rAES-ECB-192:\t#{_+1}", end='')
     aes = AES.new(randbytes(24), AES.MODE_ECB)
     aes.decrypt(buffer)
 end = dt.now()
@@ -70,9 +70,11 @@ tee_print(f"\rAES-ECB-192:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / 
 
 start = dt.now()
 for _ in range(TRIALS):
-    tee_print(f"\rAES-ECB-256: {_}", end='')
+    tee_print(f"\rAES-ECB-256:\t#{_+1}", end='')
     aes = AES.new(randbytes(32), AES.MODE_ECB)
     aes.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
 tee_print(f"\rAES-ECB-256:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+
+tee_print("-" * 64)
