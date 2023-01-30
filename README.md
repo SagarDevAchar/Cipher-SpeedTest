@@ -29,6 +29,7 @@ This repository contains the following files:
 - `data_gen.py`: Generators a `.bin` file in the working directory of 64MB Size
 - `tee.py`: A very primitive version of the Linux [`tee`](https://en.wikipedia.org/wiki/Tee_(command)) to log and print parallelly
 - `speedtest_x.py`: Speedtest Code for Cipher `X`
+- `run_all.sh`: Shell Script to run all tests
 
 The outputs generated are available in a file named `output.log`
 
@@ -36,11 +37,11 @@ The outputs generated are available in a file named `output.log`
 
 To generate the random data, run the `data_gen.py` script as shown below:
 ```
-  $ python data_gen.py [FILE_SIZE_IN_MEGABYTES]
+  $ python3 data_gen.py [FILE_SIZE_IN_MEGABYTES]
 ```
 For example, the following command generates `16MB` of data:
 ```
-  $ python data_gen.py 16
+  $ python3 data_gen.py 16
 ```
 Failure to provide the `FILE_SIZE_IN_MEGABYTES` argument will default to producing `64MB` of data
 
@@ -48,10 +49,22 @@ Failure to provide the `FILE_SIZE_IN_MEGABYTES` argument will default to produci
 
 To test a cipher `X`, run the `speedtest_x.py` script as shown below:
 ```
-  $ python speedtest_x.py [TRIALS]
+  $ python3 speedtest_x.py [TRIALS]
 ```
-For example, the following command tests the `ChaCha20` Cipher for `10` rounds:
+For example, the following command tests the `ChaCha20` Cipher for `10` trials:
 ```
-  $ python speedtest_chacha20.py 10
+  $ python3 speedtest_chacha20.py 10
 ```
 Failure to provide the `TRIALS` argument will default to testing for `15` trials
+
+### Running all tests
+
+To run all tests simultaneously, run the `run_all.sh` shell script as shown below:
+```
+  $ sh run_shell.sh [FILE_SIZE_IN_MEGABYTES] [TRIALS]
+```
+For example, the following command tests all ciphers for `16MB` random data for `10` trials:
+```
+  $ sh run_shell.sh 16 10
+```
+Failure to provide the `FILE_SIZE_IN_MEGABYTES` or `TRIALS` argument will default to the value mentioned in the previous subsection
