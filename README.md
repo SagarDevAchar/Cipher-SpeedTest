@@ -1,4 +1,4 @@
-[![speed-test](https://github.com/SagarDevAchar/Cipher-SpeedTest/actions/workflows/run-shell.yml/badge.svg)](https://github.com/SagarDevAchar/Cipher-SpeedTest/actions/workflows/run-shell.yml)
+[![speed-test-ubuntu](https://github.com/SagarDevAchar/Cipher-SpeedTest/actions/workflows/run-shell.yml/badge.svg)](https://github.com/SagarDevAchar/Cipher-SpeedTest/actions/workflows/run-shell.yml)
 
 # Cipher-SpeedTest
 Python Codebase to test the speed of Block and Stream Ciphers on your PC
