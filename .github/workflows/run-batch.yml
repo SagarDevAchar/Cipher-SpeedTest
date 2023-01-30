@@ -25,7 +25,7 @@ jobs:
         pip install -r requirements.txt
         
     - name: Run tests
-      run: run_all.bat 1 10 > NUL
+      run: ./run_all.bat 1 10 > NUL
       
     - name: Show Output
       run: type output.log
