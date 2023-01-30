@@ -20,7 +20,7 @@ All Ciphers are tested for **encryption** and **decryption** of a `64 MB` (megab
 
 This process will take time, so please be patient!
 
-**NOTE:** On Intel CPUs which operate on successors of the Nehalem Microarchitecture, AES runs exceptionally fast compared to other ciphers. This is due to the introduction of the [AES-NI Instruction Set](https://en.wikipedia.org/wiki/AES_instruction_set) by Intel. 
+**NOTE:** On Intel CPUs which operate on successors of the Nehalem Microarchitecture, AES runs exceptionally fast compared to other ciphers. This is due to the introduction of the [AES-NI Instruction Set](https://en.wikipedia.org/wiki/AES_instruction_set) by Intel. To perform accurate computational analysis, please turn off the AES-NI feature.
 
 ## Usage
 
