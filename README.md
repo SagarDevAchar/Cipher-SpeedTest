@@ -67,4 +67,4 @@ For example, the following command tests all ciphers for `16MB` random data for 
 ```
   $ sh run_shell.sh 16 10
 ```
-Failure to provide the `FILE_SIZE_IN_MEGABYTES` or `TRIALS` argument will default to the value mentioned in the previous subsection
+Failure to provide the `FILE_SIZE_IN_MEGABYTES` or `TRIALS` argument will default to `64MB` and `15` trials.
