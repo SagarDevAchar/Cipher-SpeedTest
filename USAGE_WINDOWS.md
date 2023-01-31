@@ -6,7 +6,7 @@
 ```
   > winget install python3
 ```
-- You can also manualla download and install `python3` from their [official website](https://python.org)
+- You can also manually download and install `python3` from their [official website](https://python.org)
 - You need to install `pycryptodome` for this to run. You can do this using the following steps:
 ```
   > pip install -r requirements.txt
