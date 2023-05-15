@@ -37,3 +37,5 @@ The outputs generated are available in a file named `output.log`
 Further steps can be found below:
 - [Usage Guide for Linux Users](https://github.com/SagarDevAchar/Cipher-SpeedTest/blob/main/USAGE_LINUX.md)
 - [Usage Guide for Windows Users](https://github.com/SagarDevAchar/Cipher-SpeedTest/blob/main/USAGE_WINDOWS.md)
+
+**NOTE:** There seems to be an unknown issue with the GitHub Actions Windows Runtime which is causing `speedtest_aes.py` to malfunction. Please run on your local machine for the accurate results
