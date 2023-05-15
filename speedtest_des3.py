@@ -9,7 +9,7 @@ tee_print("-" * 64)
 
 with open('random_data.bin', 'rb') as f:
     buffer = f.read()
-FS = 8 * len(buffer) / (1024 ** 2)
+FS = len(buffer) / (1024 ** 2)
 
 try:
     TRIALS = int(sys.argv[1])
@@ -27,7 +27,7 @@ for _ in range(TRIALS):
     des3.encrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rDES3-ECB-112:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rDES3-ECB-112:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -36,7 +36,7 @@ for _ in range(TRIALS):
     des3.encrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rDES3-ECB-168:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rDES3-ECB-168:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 tee_print("\nDECRYPT")
 
@@ -47,7 +47,7 @@ for _ in range(TRIALS):
     des3.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rDES3-ECB-112:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rDES3-ECB-112:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -56,6 +56,6 @@ for _ in range(TRIALS):
     des3.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rDES3-ECB-168:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rDES3-ECB-168:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 tee_print("-" * 64)

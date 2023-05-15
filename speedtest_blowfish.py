@@ -9,7 +9,7 @@ tee_print("-" * 64)
 
 with open('random_data.bin', 'rb') as f:
     buffer = f.read()
-FS = 8 * len(buffer) / (1024 ** 2)
+FS = len(buffer) / (1024 ** 2)
 
 try:
     TRIALS = int(sys.argv[1])
@@ -27,7 +27,7 @@ for _ in range(TRIALS):
     blowfish.encrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-64:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-64:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -36,7 +36,7 @@ for _ in range(TRIALS):
     blowfish.encrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-128:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-128:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -45,7 +45,7 @@ for _ in range(TRIALS):
     blowfish.encrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-192:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-192:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -54,7 +54,7 @@ for _ in range(TRIALS):
     blowfish.encrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-256:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-256:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -63,7 +63,7 @@ for _ in range(TRIALS):
     blowfish.encrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-448:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-448:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 tee_print("\nDECRYPT")
 
@@ -74,7 +74,7 @@ for _ in range(TRIALS):
     blowfish.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-64:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-64:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -83,7 +83,7 @@ for _ in range(TRIALS):
     blowfish.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-128:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-128:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -92,7 +92,7 @@ for _ in range(TRIALS):
     blowfish.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-192:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-192:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -101,7 +101,7 @@ for _ in range(TRIALS):
     blowfish.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-256:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-256:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 start = dt.now()
 for _ in range(TRIALS):
@@ -110,6 +110,6 @@ for _ in range(TRIALS):
     blowfish.decrypt(buffer)
 end = dt.now()
 T = (end - start).total_seconds() / TRIALS
-tee_print(f"\rBlowfish-ECB-448:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} Mbps")
+tee_print(f"\rBlowfish-ECB-448:\t{(end - start).total_seconds() / TRIALS:f} s\t{FS / T:f} MB/s")
 
 tee_print("-" * 64)
