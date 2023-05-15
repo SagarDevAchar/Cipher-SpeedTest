@@ -9,7 +9,7 @@ tee_print("-" * 64)
 
 with open('random_data.bin', 'rb') as f:
     buffer = f.read()
-FS = len(buffer) / (1024 ** 2)
+FS = 8 * len(buffer) / (1024 ** 2)
 
 try:
     TRIALS = int(sys.argv[1])
